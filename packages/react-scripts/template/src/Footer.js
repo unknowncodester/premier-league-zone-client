@@ -1,27 +1,16 @@
 import React, { Component } from 'react';
+import { Nav, NavItem, Row } from 'react-bootstrap';
 
 class Footer extends Component {
 
     render() {
-        const {footerStyle, linkStyle} = styles;
         return (
-                <div style={footerStyle}>
-                    <a style={linkStyle} href="" >More Info</a>
-                </div>
+        <Row>
+            <Nav bsStyle="pills" activeKey={1}>
+                <NavItem href="/home">More Info</NavItem>
+            </Nav>
+        </Row>
         );
-    }
-}
-
-const styles = {
-    footerStyle: {
-        height: '20px',
-        padding: '15px',
-        backgroundColor: '#5a5656',
-        color: 'white',
-    },
-    linkStyle: {
-        padding: '25px',
-        color: 'white',
     }
 }
 

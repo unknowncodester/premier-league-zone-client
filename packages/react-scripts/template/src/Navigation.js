@@ -1,27 +1,19 @@
 import React, { Component } from 'react';
+import { Nav, NavItem, Row } from 'react-bootstrap';
 
 class Navigation extends Component {
     render() {
         return (
-                <div style={NavigationStyle}>
-                    <a href="" style={LinkStyle}>Home</a>
-                    <a href="" style={LinkStyle}>Matches</a>
-                    <a href="" style={LinkStyle}>Stats</a>
-                    <a href="" style={LinkStyle}>Forum</a>
-                </div>
+            <Row>
+                <Nav bsStyle="pills" activeKey={1}>
+                    <NavItem href="/home">Home</NavItem>
+                    <NavItem href="Item">Matches</NavItem>
+                    <NavItem href="Item">Stats</NavItem>
+                    <NavItem href="Item">Forum</NavItem>
+                </Nav>
+            </Row>
         );
     }
-}
-
-const NavigationStyle = {
-    height: '30px',
-    padding: '10px',
-    backgroundColor: '#5a5656',
-};
-
-const LinkStyle = {
-    padding: '15px',
-    color: 'white',
 }
 
 export default Navigation;
