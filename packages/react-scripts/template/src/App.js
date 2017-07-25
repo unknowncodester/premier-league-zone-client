@@ -1,22 +1,53 @@
 import React, { Component } from 'react';
+import {
+    BrowserRouter,
+    Link,
+    Route
+} from 'react-router-dom';
+import Home from './containers/Home';
+import Teams from './containers/Teams';
+import Matches from './containers/Matches';
+import Stats from './containers/Stats';
+import Forum from './containers/Forum';
 import './App.css';
-import Header from './Header.js';
-import Navigation from './Navigation.js';
-import Body from './Body.js';
-import Footer from './Footer.js';
-import { Row, Grid, Col } from 'react-bootstrap';
+import { Grid, Nav, NavItem } from 'react-bootstrap';
 
 class App extends Component {
     render() {
         return (
-            <div>
-                <Grid>
-                    <Navigation/>
-                    <Header/>
-                    <Body/>
-                    <Footer/>
-                </Grid>
-            </div>
+            <BrowserRouter>
+                <div>
+                    <Grid>
+                        <Nav bsStyle="pills">
+                            <NavItem>
+                                <Link to="/">Home</Link>
+                            </NavItem>
+
+                            <NavItem>
+                                <Link to="/teams">Teams</Link>
+                            </NavItem>
+
+                            <NavItem>
+                                <Link to="/matches">Matches</Link>
+                            </NavItem>
+
+                            <NavItem>
+                                <Link to="/stats">Stats</Link>
+                            </NavItem>
+
+                            <NavItem>
+                                <Link to="/forum">Forum</Link>
+                            </NavItem>
+                        </Nav>
+
+                        <Route exact path="/" component={Home}/>
+                        <Route path="/teams" component={Teams}/>
+                        <Route path="/matches" component={Matches}/>
+                        <Route path="/stats" component={Stats}/>
+                        <Route path="/forum" component={Forum}/>
+                    </Grid>
+                </div>
+            </BrowserRouter>
         );
     }
 }
