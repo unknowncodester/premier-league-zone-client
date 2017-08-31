@@ -1,31 +1,23 @@
 import React, { Component } from 'react';
 import Header from '../components/Header.js';
-import Body from '../components/Body.js';
+import LeagueTable from '../components/LeagueTable.js';
 import Footer from '../components/Footer.js';
 import { Row } from 'react-bootstrap';
 
 class Stats extends Component {
 
-    _renderLeagueTable() {
-        let renderedLeagueTable = [];
-        
-        leagueTable.forEach(function (team) {
-            
-        })
-    }
-
     render() {
         return (
             <Row>
                 <Header/>
-                Stats coming soon
+                <LeagueTable teams={leagueTableJson}/>
                 <Footer/>
             </Row>
         );
     }
 }
 
-const leagueTable = [
+const leagueTableJson = [
     {
         "name": "Arsenal",
         "games": "3",
