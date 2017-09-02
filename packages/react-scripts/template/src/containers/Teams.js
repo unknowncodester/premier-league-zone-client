@@ -3,14 +3,26 @@ import Header from '../components/Header.js';
 import Team from '../components/Team.js';
 import Footer from '../components/Footer.js';
 import { Row, ListGroup } from 'react-bootstrap';
+import axios from 'axios';
 
 class Teams extends Component {
 
+    constructor() {
+        super();
+        this.state={teams:[]};
+    }
+
+    componentDidMount(){
+        axios.get('http://localhost:8000/api/teams')
+            .then(response => {
+                this.setState({teams: response.data.data})
+            });
+    }
     _renderTeams() {
 
         let renderedTeams = [];
-        teams.forEach(function(team) {
-            renderedTeams.push(<Team data={team} />);
+        this.state.teams.forEach(function(team) {
+            renderedTeams.push(<Team key={team.id} data={team} />);
         });
 
         return renderedTeams;
@@ -28,21 +40,5 @@ class Teams extends Component {
         );
     }
 }
-
-const teams =
-[
-    {
-        "id": 1,
-        "name": "Arsenal"
-    },
-    {
-        "id": 2,
-        "name": "Bournemouth",
-    },
-    {
-        "id": 3,
-        "name": "Brighton",
-    },
-];
 
 export default Teams;
