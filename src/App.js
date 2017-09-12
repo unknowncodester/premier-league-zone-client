@@ -11,11 +11,13 @@ import Stats from './containers/Stats';
 import Forum from './containers/Forum';
 import './App.css';
 import { Grid, Nav, NavItem } from 'react-bootstrap';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 class App extends Component {
     render() {
         return (
-            <BrowserRouter>
+            <MuiThemeProvider>
+                <BrowserRouter>
                 <div>
                     <Grid>
                         <Nav bsStyle="pills">
@@ -48,6 +50,7 @@ class App extends Component {
                     </Grid>
                 </div>
             </BrowserRouter>
+            </MuiThemeProvider>
         );
     }
 }
