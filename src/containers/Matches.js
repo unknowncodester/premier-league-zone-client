@@ -20,13 +20,9 @@ class Matches extends Component {
     }
 
     _renderMatches() {
-        let renderedMatches = [];
-
-        this.state.matches.forEach(function(match) {
-            renderedMatches.push(<Match data={match} />);
+        return this.state.matches.map((match) => {
+            return (<Match data={match} />);
         });
-
-        return renderedMatches;
     }
 
     render() {

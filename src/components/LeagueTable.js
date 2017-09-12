@@ -23,7 +23,7 @@ class LeagueTable extends Component {
                     </TableRow>
                 </TableHeader>
                 <TableBody>
-                    {this.props.teams.map(function(team) {
+                    {this.props.teams.map((team) => {
                         return (
                             <TableRow>
                                 <TableRowColumn>{team.name}</TableRowColumn>

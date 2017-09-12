@@ -19,13 +19,9 @@ class Teams extends Component {
             });
     }
     _renderTeams() {
-
-        let renderedTeams = [];
-        this.state.teams.forEach(function(team) {
-            renderedTeams.push(<Team key={team.id} data={team} />);
+        return this.state.teams.map(function(team) {
+            return (<Team key={team.id} data={team} />);
         });
-
-        return renderedTeams;
     }
 
     render() {
