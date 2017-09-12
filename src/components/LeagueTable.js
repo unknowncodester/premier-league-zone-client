@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 
 class LeagueTable extends Component {
     render() {
-
-        console.log(this.props.teams);
-
         var leagueTable = this.props.teams.map(function(team) {
             return (
                 <tr>

@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import Header from '../components/Header.js';
 import LeagueTable from '../components/LeagueTable.js';
 import Footer from '../components/Footer.js';
-import { Row } from 'react-bootstrap'
-import axios from "axios";
+import { Row } from 'react-bootstrap';
+import axios from 'axios';
 
 class Stats extends Component {
 
@@ -15,7 +15,7 @@ class Stats extends Component {
     componentDidMount(){
         axios.get('http://localhost:8000/api/league')
             .then(response => {
-                this.setState({teams: response.data.data})
+                this.setState({teams: response.data.data});
             });
     }
 
