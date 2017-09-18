@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import { Row } from 'react-bootstrap';
 import { AppBar } from 'material-ui';
-import { Nav, NavItem } from 'react-bootstrap';
 import {
-    BrowserRouter,
-    Link,
-    Route
+    Link
 } from 'react-router-dom';
+import RaisedButton from 'material-ui/RaisedButton';
+
 
 class Header extends Component {
     render() {
@@ -14,31 +13,35 @@ class Header extends Component {
             <Row>
                 <AppBar title="Premier League Zone">
                 </AppBar>
-
-                <Nav bsStyle="pills">
-                    <NavItem>
-                        <Link to="/">Home</Link>
-                    </NavItem>
-
-                    <NavItem>
-                        <Link to="/teams">Teams</Link>
-                    </NavItem>
-
-                    <NavItem>
-                        <Link to="/matches">Matches</Link>
-                    </NavItem>
-
-                    <NavItem>
-                        <Link to="/stats">Stats</Link>
-                    </NavItem>
-
-                    <NavItem>
-                        <Link to="/forum">Forum</Link>
-                    </NavItem>
-                </Nav>
+                    <div>
+                        <Link to="/">
+                            <RaisedButton label="Home" style={style}>
+                            </RaisedButton>
+                        </Link>
+                        <Link to="/teams">
+                            <RaisedButton label="Teams" style={style}>
+                            </RaisedButton>
+                        </Link>
+                        <Link to="/matches">
+                            <RaisedButton label="Matches" style={style}>
+                            </RaisedButton>
+                        </Link>
+                        <Link to="/stats">
+                            <RaisedButton label="Stats" style={style}>
+                            </RaisedButton>
+                        </Link>
+                        <Link to="/forum">
+                            <RaisedButton label="Forum" style={style}>
+                            </RaisedButton>
+                        </Link>
+                    </div>
             </Row>
         );
     }
 }
+
+const style = {
+    margin: 12,
+};
 
 export default Header;
