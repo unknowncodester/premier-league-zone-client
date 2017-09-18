@@ -1,15 +1,5 @@
 import React, { Component } from 'react';
-import {Card, CardActions, CardHeader, CardText, CardMedia, CardTitle} from 'material-ui/Card';
-
-const styles = {
-    chip: {
-        margin: 4,
-    },
-    wrapper: {
-        display: 'flex',
-        flexWrap: 'wrap',
-    },
-};
+import {Card, CardText, CardTitle} from 'material-ui/Card';
 
 class Match extends Component {
     render() {

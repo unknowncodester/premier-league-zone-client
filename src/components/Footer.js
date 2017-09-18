@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-import { Nav, NavItem, Row } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 
 class Footer extends Component {
 
     render() {
         return (
-            <Row>
-
-            </Row>
+            <Row></Row>
         );
     }
 }
