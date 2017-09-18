@@ -1,12 +1,22 @@
 import React, { Component } from 'react';
-import { ListGroupItem } from 'react-bootstrap';
+import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
 
 class Team extends Component {
     render() {
         return (
-            <ListGroupItem>
-                {this.props.data.name}
-            </ListGroupItem>
+        <Card>
+            <CardHeader
+                title={this.props.data.name}
+                actAsExpander={true}
+                showExpandableButton={true}
+            />
+            <CardText expandable={true}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
+                Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
+                Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
+            </CardText>
+        </Card>
         );
     }
 }

@@ -6,9 +6,7 @@ class Footer extends Component {
     render() {
         return (
             <Row>
-                <Nav bsStyle="pills" activeKey={1}>
-                    <NavItem href="/home">More Info</NavItem>
-                </Nav>
+
             </Row>
         );
     }

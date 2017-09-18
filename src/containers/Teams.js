@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from '../components/Header.js';
 import Team from '../components/Team.js';
 import Footer from '../components/Footer.js';
-import { Row, ListGroup } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 import axios from 'axios';
 
 class Teams extends Component {
@@ -28,9 +28,7 @@ class Teams extends Component {
         return (
             <Row>
                 <Header/>
-                <ListGroup>
                     {this._renderTeams()}
-                </ListGroup>
                 <Footer/>
             </Row>
         );
