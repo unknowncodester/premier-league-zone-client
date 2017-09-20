@@ -14,13 +14,13 @@ class FormTable extends Component {
             <div>
                 <h2>Form Table</h2>
                 <Table>
-                    <TableHeader>
+                    <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
                         <TableRow>
                             <TableHeaderColumn>Name</TableHeaderColumn>
                             <TableHeaderColumn>Form</TableHeaderColumn>
                         </TableRow>
                     </TableHeader>
-                    <TableBody>
+                    <TableBody displayRowCheckbox={false}>
                         <TableRow>
                             <TableRowColumn>Burnley</TableRowColumn>
                             <TableRowColumn>WDLWD</TableRowColumn>

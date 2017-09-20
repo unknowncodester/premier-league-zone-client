@@ -14,7 +14,7 @@ class LeagueTable extends Component {
             <div>
                 <h2>League Table</h2>
                 <Table>
-                    <TableHeader>
+                    <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
                         <TableRow>
                             <TableHeaderColumn>Name</TableHeaderColumn>
                             <TableHeaderColumn>Games</TableHeaderColumn>
@@ -24,7 +24,7 @@ class LeagueTable extends Component {
                             <TableHeaderColumn>Points</TableHeaderColumn>
                         </TableRow>
                     </TableHeader>
-                    <TableBody>
+                    <TableBody displayRowCheckbox={false}>
                         {this.props.teams.map((team) => {
                             return (
                                 <TableRow>
