@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardTitle, CardText, CardActions, FlatButton } from 'material-ui';
+import { Card, CardTitle, CardText } from 'material-ui';
 
 class RecentPosts extends Component {
     render() {
@@ -12,10 +12,6 @@ class RecentPosts extends Component {
                     Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
                     Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
                 </CardText>
-                <CardActions>
-                    <FlatButton label="Action1" />
-                    <FlatButton label="Action2" />
-                </CardActions>
             </Card>
         );
     }

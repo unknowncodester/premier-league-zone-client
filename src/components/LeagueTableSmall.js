@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
-import {
-    Card,
-    CardTitle,
-    CardText,
-    CardActions,
-    FlatButton,
-} from 'material-ui';
+import { Card, CardTitle, CardText, CardActions, FlatButton } from 'material-ui';
+import { Link } from "react-router-dom";
 
 class LatestNews extends Component {
     render() {
@@ -18,7 +13,9 @@ class LatestNews extends Component {
                         2 | Leicester | LWWDD
                     </CardText>
                     <CardActions>
-                        <FlatButton label="View Full League Table" />
+                        <Link to="/stats">
+                            <FlatButton primary={true} label="View Full League Table" />
+                        </Link>
                     </CardActions>
                 </Card>
             </div>

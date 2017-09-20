@@ -3,6 +3,7 @@ import Header from '../components/Header.js';
 import Footer from '../components/Footer.js';
 import { Row } from 'react-bootstrap';
 import RecentPosts from "../components/RecentPosts";
+import Topics from "../components/Topics";
 
 class Forum extends Component {
     render() {
@@ -10,6 +11,7 @@ class Forum extends Component {
             <Row>
                 <Header/>
                 <RecentPosts/>
+                <Topics/>
                 <Footer/>
             </Row>
         );

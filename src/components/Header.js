@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { Row } from 'react-bootstrap';
 import { AppBar } from 'material-ui';
-import {
-    Link
-} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import RaisedButton from 'material-ui/RaisedButton';
 
 class Header extends Component {
