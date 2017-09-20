@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import Header from '../components/Header.js';
-import Body from '../components/Body.js';
 import Footer from '../components/Footer.js';
 import { Row } from 'react-bootstrap';
+import RecentPosts from "../components/RecentPosts";
 
 class Forum extends Component {
     render() {
         return (
             <Row>
                 <Header/>
-                Forum coming soon
+                <RecentPosts/>
                 <Footer/>
             </Row>
         );
