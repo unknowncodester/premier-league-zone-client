@@ -1,14 +1,56 @@
 import React, { Component } from 'react';
-import { Row, Jumbotron, Button } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
+import { Card, CardHeader, CardMedia, CardTitle, CardText, CardActions, FlatButton } from 'material-ui';
 
 class Body extends Component {
     render() {
         return (
             <Row>
-                <Jumbotron>
-                    <h1>Latest News</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at ultricies sapien, pellentesque commodo est. Nulla maximus diam ut purus scelerisque, posuere sollicitudin turpis pellentesque. Curabitur lobortis accumsan eleifend. Sed pretium risus et diam ullamcorper, eu blandit ligula tristique. Pellentesque eu ligula semper massa commodo dignissim. Mauris suscipit iaculis turpis, eget feugiat ex fringilla vitae. Curabitur et urna velit. Curabitur vestibulum mauris non elementum posuere. Fusce et metus eu dui faucibus mollis et id ante. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>                  <p><Button bsStyle="primary">Learn more</Button></p>
-                </Jumbotron>
+                <Col md='4'>
+                    <Card>
+                        <CardTitle title="Latest News" />
+                        <CardText>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
+                            Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
+                            Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
+                        </CardText>
+                        <CardActions>
+                            <FlatButton label="Action1" />
+                            <FlatButton label="Action2" />
+                        </CardActions>
+                    </Card>
+                </Col>
+                <Col md='4'>
+                    <Card>
+                        <CardTitle title="Recent Posts" />
+                        <CardText>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
+                            Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
+                            Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
+                        </CardText>
+                        <CardActions>
+                            <FlatButton label="Action1" />
+                            <FlatButton label="Action2" />
+                        </CardActions>
+                    </Card>
+                </Col>
+                <Col md='4'>
+                    <Card>
+                        <CardTitle title="Current Standings" />
+                        <CardText>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
+                            Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
+                            Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
+                        </CardText>
+                        <CardActions>
+                            <FlatButton label="Action1" />
+                            <FlatButton label="Action2" />
+                        </CardActions>
+                    </Card>
+                </Col>
             </Row>
         );
     }
