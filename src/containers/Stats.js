@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import Header from '../components/Header.js';
 import LeagueTable from '../components/LeagueTable.js';
+import FormTable from '../components/FormTable.js';
 import Footer from '../components/Footer.js';
-import { Row } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import axios from 'axios';
 
 class Stats extends Component {
@@ -23,7 +24,14 @@ class Stats extends Component {
         return (
             <Row>
                 <Header/>
-                <LeagueTable teams={this.state.teams}/>
+                <Row>
+                    <Col md='8'>
+                        <LeagueTable teams={this.state.teams}/>
+                    </Col>
+                    <Col md='4'>
+                        <FormTable/>
+                    </Col>
+                </Row>
                 <Footer/>
             </Row>
         );

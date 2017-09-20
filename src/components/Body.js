@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'react-bootstrap';
-import { Card, CardHeader, CardMedia, CardTitle, CardText, CardActions, FlatButton } from 'material-ui';
+import { Card, CardTitle, CardText, CardActions, FlatButton } from 'material-ui';
 
 class Body extends Component {
     render() {
