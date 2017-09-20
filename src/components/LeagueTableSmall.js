@@ -1,34 +1,26 @@
 import React, { Component } from 'react';
 import {
-    Table,
-    TableBody,
-    TableHeader,
-    TableHeaderColumn,
-    TableRow,
-    TableRowColumn,
-} from 'material-ui/Table';
+    Card,
+    CardTitle,
+    CardText,
+    CardActions,
+    FlatButton,
+} from 'material-ui';
 
 class LatestNews extends Component {
     render() {
         return (
             <div>
-                <h2>League Table</h2>
-                <Table>
-                    <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
-                        <TableRow>
-                            <TableHeaderColumn>#</TableHeaderColumn>
-                            <TableHeaderColumn>Name</TableHeaderColumn>
-                            <TableHeaderColumn>Points</TableHeaderColumn>
-                        </TableRow>
-                    </TableHeader>
-                    <TableBody displayRowCheckbox={false}>
-                        <TableRow>
-                            <TableRowColumn>1</TableRowColumn>
-                            <TableRowColumn>Chelsea</TableRowColumn>
-                            <TableRowColumn>13</TableRowColumn>
-                        </TableRow>
-                    </TableBody>
-                </Table>
+                <Card>
+                    <CardTitle title="League Table" />
+                    <CardText>
+                        1 | Burnley   | WWWWD
+                        2 | Leicester | LWWDD
+                    </CardText>
+                    <CardActions>
+                        <FlatButton label="View Full League Table" />
+                    </CardActions>
+                </Card>
             </div>
         );
     }
