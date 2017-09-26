@@ -1,26 +1,47 @@
 import React, { Component } from 'react';
-import { Card, CardTitle, CardText, CardActions, FlatButton } from 'material-ui';
+import {
+    Table,
+    TableBody,
+    TableHeader,
+    TableHeaderColumn,
+    TableRow,
+    TableRowColumn,
+} from 'material-ui/Table';
+import { FlatButton } from 'material-ui';
 import { Link } from "react-router-dom";
 
-class LatestNews extends Component {
+class LeagueTableSmall extends Component {
+
     render() {
         return (
             <div>
-                <Card>
-                    <CardTitle title="League Table" />
-                    <CardText>
-                        1 | Burnley   | WWWWD
-                        2 | Leicester | LWWDD
-                    </CardText>
-                    <CardActions>
-                        <Link to="/stats">
-                            <FlatButton primary={true} label="View Full League Table" />
-                        </Link>
-                    </CardActions>
-                </Card>
+                <h2>League Table</h2>
+                <Table>
+                    <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
+                        <TableRow>
+                            <TableHeaderColumn>Name</TableHeaderColumn>
+                            <TableHeaderColumn>Games</TableHeaderColumn>
+                            <TableHeaderColumn>Points</TableHeaderColumn>
+                        </TableRow>
+                    </TableHeader>
+                    <TableBody displayRowCheckbox={false}>
+                        {this.props.teams.map((team) => {
+                            return (
+                                <TableRow>
+                                    <TableRowColumn>{team.name}</TableRowColumn>
+                                    <TableRowColumn>{team.games}</TableRowColumn>
+                                    <TableRowColumn>{team.points}</TableRowColumn>
+                                </TableRow>
+                            );
+                        })}
+                    </TableBody>
+                </Table>
+                <Link to="/stats">
+                    <FlatButton primary={true} label="View Full League Table" />
+                </Link>
             </div>
         );
     }
 }
 
-export default LatestNews;
+export default LeagueTableSmall;
