@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Row } from 'react-bootstrap';
 import {Card, CardTitle} from 'material-ui';
+import {getPosts} from "../actions";
 
 class RecentPosts extends Component {
 
@@ -11,6 +12,7 @@ class RecentPosts extends Component {
     }
 
     componentDidMount(){
+        console.log(getPosts());
         axios.get('http://localhost:8000/api/posts')
             .then(response => {
                 this.setState({posts: response.data.data});

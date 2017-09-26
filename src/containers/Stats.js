@@ -5,6 +5,7 @@ import FormTable from '../components/FormTable.js';
 import Footer from '../components/Footer.js';
 import { Row, Col } from 'react-bootstrap';
 import axios from 'axios';
+import {getLeague} from "../actions";
 
 class Stats extends Component {
 
@@ -14,6 +15,7 @@ class Stats extends Component {
     }
 
     componentDidMount(){
+        console.log(getLeague());
         axios.get('http://localhost:8000/api/league')
             .then(response => {
                 this.setState({teams: response.data.data});

@@ -4,6 +4,7 @@ import Team from '../components/Team.js';
 import Footer from '../components/Footer.js';
 import { Row } from 'react-bootstrap';
 import axios from 'axios';
+import {getTeams} from "../actions";
 
 class Teams extends Component {
 
@@ -13,6 +14,7 @@ class Teams extends Component {
     }
 
     componentDidMount(){
+        console.log(getTeams())
         axios.get('http://localhost:8000/api/teams')
             .then(response => {
                 this.setState({teams: response.data.data});

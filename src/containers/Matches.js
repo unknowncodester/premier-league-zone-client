@@ -4,6 +4,7 @@ import Match from '../components/Match.js';
 import Footer from '../components/Footer.js';
 import { Row, Col } from 'react-bootstrap';
 import axios from 'axios';
+import { getMatches } from '../actions'
 
 class Matches extends Component {
 
@@ -13,6 +14,7 @@ class Matches extends Component {
     }
 
     componentDidMount(){
+        console.log(getMatches());
         axios.get('http://localhost:8000/api/matches')
             .then(response => {
                 this.setState({matches: response.data.data});
