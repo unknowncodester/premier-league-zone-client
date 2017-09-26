@@ -8,27 +8,27 @@ class Header extends Component {
     render() {
         return (
             <Row>
-                <AppBar title="Premier League Zone">
+                <AppBar showMenuIconButton={false} style={appBarStyle} title="Premier League Zone">
                 </AppBar>
                     <div>
                         <Link to="/">
-                            <RaisedButton label="Home" style={style}>
+                            <RaisedButton label="Home" style={buttonStyle}>
                             </RaisedButton>
                         </Link>
                         <Link to="/teams">
-                            <RaisedButton label="Teams" style={style}>
+                            <RaisedButton label="Teams" style={buttonStyle}>
                             </RaisedButton>
                         </Link>
                         <Link to="/matches">
-                            <RaisedButton label="Matches" style={style}>
+                            <RaisedButton label="Matches" style={buttonStyle}>
                             </RaisedButton>
                         </Link>
                         <Link to="/stats">
-                            <RaisedButton label="Stats" style={style}>
+                            <RaisedButton label="Stats" style={buttonStyle}>
                             </RaisedButton>
                         </Link>
                         <Link to="/forum">
-                            <RaisedButton label="Forum" style={style}>
+                            <RaisedButton label="Forum" style={buttonStyle}>
                             </RaisedButton>
                         </Link>
                     </div>
@@ -37,8 +37,12 @@ class Header extends Component {
     }
 }
 
-const style = {
+const buttonStyle = {
     margin: 12,
+};
+
+const appBarStyle = {
+    backgroundColor: '#b0b59d'
 };
 
 export default Header;

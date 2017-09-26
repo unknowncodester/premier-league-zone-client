@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardHeader } from 'material-ui';
+import { Row } from 'react-bootstrap';
 import * as axios from "axios";
 import Topic from "./Topic";
 
@@ -25,12 +25,9 @@ class Topics extends Component {
 
     render() {
         return (
-            <Card>
-                <CardHeader
-                    title='Topics'
-                />
+            <Row>
                 {this._renderTopics()}
-            </Card>
+            </Row>
         );
     }
 }
