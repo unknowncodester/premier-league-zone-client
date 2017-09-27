@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Row } from 'react-bootstrap';
 import {Card, CardTitle} from 'material-ui';
-import {getPosts} from "../actions";
+import {getPosts} from "../actions/actions";
 
 class RecentPosts extends Component {
 

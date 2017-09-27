@@ -4,7 +4,7 @@ import Match from '../components/Match.js';
 import Footer from '../components/Footer.js';
 import { Row, Col } from 'react-bootstrap';
 import axios from 'axios';
-import { getMatches } from '../actions'
+import { getMatches } from '../actions/actions'
 
 class Matches extends Component {
 

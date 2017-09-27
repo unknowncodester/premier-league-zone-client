@@ -5,7 +5,7 @@ import FormTable from '../components/FormTable.js';
 import Footer from '../components/Footer.js';
 import { Row, Col } from 'react-bootstrap';
 import axios from 'axios';
-import {getLeague} from "../actions";
+import {getLeague} from "../actions/actions";
 
 class Stats extends Component {
 

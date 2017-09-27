@@ -6,7 +6,7 @@ import LatestNews from "../components/LatestNews";
 import RecentPosts from "../components/RecentPosts";
 import LeagueTableSmall from "../components/LeagueTableSmall";
 import axios from "axios";
-import { getLeague } from "../actions";
+import { getLeague } from "../actions/actions";
 
 class Home extends Component {
 

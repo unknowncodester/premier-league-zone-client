@@ -4,7 +4,8 @@ import Team from '../components/Team.js';
 import Footer from '../components/Footer.js';
 import { Row } from 'react-bootstrap';
 import axios from 'axios';
-import {getTeams} from "../actions";
+import {getTeams} from "../actions/actions";
+import { connect } from 'react-redux';
 
 class Teams extends Component {
 

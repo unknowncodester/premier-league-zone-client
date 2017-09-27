@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Row } from 'react-bootstrap';
 import * as axios from "axios";
 import Topic from "./Topic";
+import {getTopics} from "../actions/actions";
 
 class Topics extends Component {
 
