@@ -12,7 +12,6 @@ class RecentPosts extends Component {
     }
 
     componentDidMount(){
-        console.log(getPosts());
         axios.get('http://localhost:8000/api/posts')
             .then(response => {
                 this.setState({posts: response.data.data});

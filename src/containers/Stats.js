@@ -15,7 +15,6 @@ class Stats extends Component {
     }
 
     componentDidMount(){
-        console.log(getLeague());
         axios.get('http://localhost:8000/api/league')
             .then(response => {
                 this.setState({teams: response.data.data});

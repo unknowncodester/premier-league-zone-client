@@ -6,7 +6,6 @@ import LatestNews from "../components/LatestNews";
 import RecentPosts from "../components/RecentPosts";
 import LeagueTableSmall from "../components/LeagueTableSmall";
 import axios from "axios";
-import { getLeague } from "../actions/actions";
 
 class Home extends Component {
 
@@ -16,7 +15,6 @@ class Home extends Component {
     }
 
     componentDidMount(){
-        console.log(getLeague())
         axios.get('http://localhost:8000/api/league')
             .then(response => {
                 this.setState({teams: response.data.data});

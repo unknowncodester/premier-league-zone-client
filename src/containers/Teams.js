@@ -15,7 +15,6 @@ class Teams extends Component {
     }
 
     componentDidMount(){
-        console.log(getTeams())
         axios.get('http://localhost:8000/api/teams')
             .then(response => {
                 this.setState({teams: response.data.data});

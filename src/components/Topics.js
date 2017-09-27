@@ -12,7 +12,6 @@ class Topics extends Component {
     }
 
     componentDidMount(){
-        console.log(getTopics())
         axios.get('http://localhost:8000/api/topics')
             .then(response => {
                 this.setState({topics: response.data.data});

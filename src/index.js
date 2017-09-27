@@ -5,15 +5,20 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import appReducers from './reducers/reducers';
-import { getTeams } from './actions/actions'
+import promise from 'redux-promise';
+import { getTeams, getMatches, getTopics, getLeague, getPosts } from './actions/actions'
+import {Provider} from "react-redux";
 
-let store = createStore(appReducers);
+const store = createStore(appReducers, applyMiddleware(promise));
 console.log(store.getState())
 store.dispatch(getTeams());
+store.dispatch(getMatches());
+store.dispatch(getTopics());
+store.dispatch(getLeague());
+store.dispatch(getPosts());
 console.log(store.getState())
 
-
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 registerServiceWorker();

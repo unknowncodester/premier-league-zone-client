@@ -9,11 +9,8 @@ const league = (state = [], action) => {
 
 const teams = (state = [], action) => {
 
-    console.log()
     if(action.type === 'GET_TEAMS'){
-        return [
-            {'name':'Arsenal'}
-        ];
+        return action.payload;
     }
     return state;
 }

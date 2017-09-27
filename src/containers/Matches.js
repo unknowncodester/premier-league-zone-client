@@ -14,7 +14,6 @@ class Matches extends Component {
     }
 
     componentDidMount(){
-        console.log(getMatches());
         axios.get('http://localhost:8000/api/matches')
             .then(response => {
                 this.setState({matches: response.data.data});

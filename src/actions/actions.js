@@ -2,54 +2,49 @@ import axios from 'axios';
 
 const apiUrl = 'http://localhost:8000/api/';
 
-export function getLeague() {
+export async function getLeague() {
 
-    let league = axios.get(apiUrl + 'league')
-        .then(response => { return response.data.data });
+    let response = await axios.get(apiUrl + 'league');
 
     return {
         type: 'GET_LEAGUE',
-        league
+        payload: response.data.data
     }
 }
 
-export function getTeams() {
-    let teams = axios.get(apiUrl + 'teams')
-        .then(response => { return response.data.data })
+export async function getTeams() {
+    let response = await axios.get(apiUrl + 'teams');
 
     return {
         type: 'GET_TEAMS',
-        teams
+        payload: response.data.data
     }
 }
 
-export function getTopics() {
-    let topics = axios.get(apiUrl + 'topics')
-        .then(response => { return response.data.data });
+export async function getTopics() {
+    let response = await axios.get(apiUrl + 'topics');
 
     return {
         type: 'GET_TOPICS',
-        topics
+        payload: response.data.data
     }
 }
 
-export function getPosts() {
-    let posts = axios.get(apiUrl + 'posts')
-        .then(response => { return response.data.data });
+export async function getPosts() {
+    let response = await axios.get(apiUrl + 'posts');
 
     return {
-        type: 'GET_TOPICS',
-        posts
+        type: 'GET_POSTS',
+        payload: response.data.data
     }
 }
 
-export function getMatches() {
-    let matches = axios.get(apiUrl + 'matches')
-        .then(response => { return response.data.data });
+export async function getMatches() {
+    let response = await axios.get(apiUrl + 'matches');
 
     return {
         type: 'GET_MATCHES',
-        matches
+        payload: response.data.data
     }
 }
 
