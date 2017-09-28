@@ -19,13 +19,17 @@ class Home extends Component {
         return (
             <Row>
                 <Header/>
+
                 <Col md="4">
+                    <h1>Latest News</h1>
                     <LatestNews/>
                 </Col>
                 <Col md="4">
+                    <h1>Recent Posts</h1>
                     <RecentPosts posts={this.props.posts}/>
                 </Col>
                 <Col md="4">
+                    <h1>League Table</h1>
                     <LeagueTableSmall league={this.props.league}/>
                 </Col>
                 <Footer/>

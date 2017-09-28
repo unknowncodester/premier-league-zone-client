@@ -21,6 +21,7 @@ class Matches extends Component {
         return (
             <Row>
                 <Header/>
+                <h1>Fixtures</h1>
                 {this._renderMatches()}
                 <Footer/>
             </Row>

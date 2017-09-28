@@ -21,6 +21,7 @@ class Teams extends Component {
         return (
             <Row>
                 <Header/>
+                    <h1>Premier League Teams</h1>
                     {this._renderTeams()}
                 <Footer/>
             </Row>

@@ -20,9 +20,11 @@ class Forum extends Component {
             <Row>
                 <Header/>
                 <Col>
+                    <h1>Recent Posts</h1>
                     <RecentPosts posts={this.props.posts}/>
                 </Col>
                 <Col>
+                    <h1>Topics</h1>
                     <Topics topics={this.props.topics}/>
                 </Col>
                 <Footer/>

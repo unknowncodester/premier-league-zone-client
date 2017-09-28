@@ -19,9 +19,11 @@ class Stats extends Component {
                 <Header/>
                 <Row>
                     <Col md='8'>
+                        <h1>League Table</h1>
                         <LeagueTable league={this.props.league}/>
                     </Col>
                     <Col md='4'>
+                        <h1>Form Table</h1>
                         <FormTable/>
                     </Col>
                 </Row>

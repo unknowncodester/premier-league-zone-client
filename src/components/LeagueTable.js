@@ -12,7 +12,6 @@ class LeagueTable extends Component {
     render() {
         return (
             <div>
-                <h2>League Table</h2>
                 <Table>
                     <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
                         <TableRow>

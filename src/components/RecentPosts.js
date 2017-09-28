@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 import { Row } from 'react-bootstrap';
-import {Card, CardTitle} from 'material-ui';
-import {getPosts} from "../actions/actions";
+import {Card, CardTitle, CardText} from 'material-ui';
 
 class RecentPosts extends Component {
 
     _renderPosts() {
-        return this.props.posts.map(function(post) {
+        return this.props.posts.slice(0,3).map(function(post) {
             return (
                 <Card>
                     <CardTitle>{post.title}</CardTitle>
-                    {post.body}
+                    <CardText>{post.body}</CardText>
                 </Card>
             );
         });

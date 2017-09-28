@@ -12,7 +12,6 @@ class FormTable extends Component {
     render() {
         return (
             <div>
-                <h2>Form Table</h2>
                 <Table>
                     <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
                         <TableRow>
