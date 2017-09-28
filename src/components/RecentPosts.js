@@ -1,25 +1,12 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import { Row } from 'react-bootstrap';
 import {Card, CardTitle} from 'material-ui';
 import {getPosts} from "../actions/actions";
 
 class RecentPosts extends Component {
 
-    constructor() {
-        super();
-        this.state={posts:[]};
-    }
-
-    componentDidMount(){
-        axios.get('http://localhost:8000/api/posts')
-            .then(response => {
-                this.setState({posts: response.data.data});
-            });
-    }
-
     _renderPosts() {
-        return this.state.posts.map(function(post) {
+        return this.props.posts.map(function(post) {
             return (
                 <Card>
                     <CardTitle>{post.title}</CardTitle>

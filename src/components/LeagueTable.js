@@ -25,7 +25,7 @@ class LeagueTable extends Component {
                         </TableRow>
                     </TableHeader>
                     <TableBody displayRowCheckbox={false}>
-                        {this.props.teams.map((team) => {
+                        {this.props.league.map((team) => {
                             return (
                                 <TableRow>
                                     <TableRowColumn>{team.name}</TableRowColumn>

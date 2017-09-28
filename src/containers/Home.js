@@ -5,20 +5,14 @@ import { Row, Col } from 'react-bootstrap';
 import LatestNews from "../components/LatestNews";
 import RecentPosts from "../components/RecentPosts";
 import LeagueTableSmall from "../components/LeagueTableSmall";
-import axios from "axios";
+import {connect} from 'react-redux';
+import {getLeague} from "../actions/actions";
 
 class Home extends Component {
 
     constructor() {
         super();
-        this.state={teams:[]};
-    }
-
-    componentDidMount(){
-        axios.get('http://localhost:8000/api/league')
-            .then(response => {
-                this.setState({teams: response.data.data});
-            });
+        this.state={league:[]};
     }
 
     render() {
@@ -29,10 +23,10 @@ class Home extends Component {
                     <LatestNews/>
                 </Col>
                 <Col md="4">
-                    <RecentPosts/>
+                    <RecentPosts posts={this.props.posts}/>
                 </Col>
                 <Col md="4">
-                    <LeagueTableSmall teams={this.state.teams}/>
+                    <LeagueTableSmall league={this.props.league}/>
                 </Col>
                 <Footer/>
             </Row>
@@ -40,4 +34,11 @@ class Home extends Component {
     }
 }
 
-export default Home;
+const mapStateToProps = (state) => {
+    return {
+        league: state.league,
+        posts: state.posts
+    }
+}
+
+export default connect(mapStateToProps)(Home);

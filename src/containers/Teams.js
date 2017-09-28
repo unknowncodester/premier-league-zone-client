@@ -3,25 +3,13 @@ import Header from '../components/Header.js';
 import Team from '../components/Team.js';
 import Footer from '../components/Footer.js';
 import { Row } from 'react-bootstrap';
-import axios from 'axios';
 import {getTeams} from "../actions/actions";
 import { connect } from 'react-redux';
 
 class Teams extends Component {
 
-    constructor() {
-        super();
-        this.state={teams:[]};
-    }
-
-    componentDidMount(){
-        axios.get('http://localhost:8000/api/teams')
-            .then(response => {
-                this.setState({teams: response.data.data});
-            });
-    }
     _renderTeams() {
-        return this.state.teams.map(function(team) {
+        return this.props.teams.map(function(team) {
             return (<Team key={team.id} data={team} />);
         });
     }
@@ -37,4 +25,10 @@ class Teams extends Component {
     }
 }
 
-export default Teams;
+const mapStateToProps = (state) => {
+    return {
+        teams: state.teams,
+    }
+}
+
+export default connect(mapStateToProps)(Teams);

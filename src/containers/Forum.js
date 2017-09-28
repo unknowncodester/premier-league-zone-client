@@ -4,17 +4,19 @@ import Footer from '../components/Footer.js';
 import { Row, Col } from 'react-bootstrap';
 import RecentPosts from "../components/RecentPosts";
 import Topics from "../components/Topics";
+import {connect} from "react-redux";
 
 class Forum extends Component {
     render() {
+
         return (
             <Row>
                 <Header/>
                 <Col>
-                    <RecentPosts/>
+                    <RecentPosts posts={this.props.posts}/>
                 </Col>
                 <Col>
-                    <Topics/>
+                    <Topics topics={this.props.topics}/>
                 </Col>
                 <Footer/>
             </Row>
@@ -22,4 +24,11 @@ class Forum extends Component {
     }
 }
 
-export default Forum;
+const mapStateToProps = (state) => {
+    return {
+        posts: state.posts,
+        topics: state.topics,
+    }
+}
+
+export default connect(mapStateToProps)(Forum);

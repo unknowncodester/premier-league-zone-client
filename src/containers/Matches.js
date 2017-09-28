@@ -2,22 +2,15 @@ import React, { Component } from 'react';
 import Header from '../components/Header.js';
 import Match from '../components/Match.js';
 import Footer from '../components/Footer.js';
-import { Row, Col } from 'react-bootstrap';
-import axios from 'axios';
+import { Row } from 'react-bootstrap';
 import { getMatches } from '../actions/actions'
+import {connect} from 'react-redux';
 
 class Matches extends Component {
 
     constructor() {
         super();
         this.state={matches:[]};
-    }
-
-    componentDidMount(){
-        axios.get('http://localhost:8000/api/matches')
-            .then(response => {
-                this.setState({matches: response.data.data});
-            });
     }
 
     _renderMatches() {
@@ -37,4 +30,10 @@ class Matches extends Component {
     }
 }
 
-export default Matches;
+const mapStateToProps = (state) => {
+    return {
+        matches: state.matches,
+    }
+}
+
+export default connect(mapStateToProps)(Matches);
