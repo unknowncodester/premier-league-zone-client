@@ -9,6 +9,10 @@ import {connect} from "react-redux";
 
 class Stats extends Component {
 
+    componentDidMount(){
+        this.props.getLeague();
+    }
+
     render() {
         return (
             <Row>
@@ -33,4 +37,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(Stats);
+export default connect(mapStateToProps, { getLeague })(Stats);

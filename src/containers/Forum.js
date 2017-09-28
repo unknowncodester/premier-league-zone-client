@@ -5,8 +5,15 @@ import { Row, Col } from 'react-bootstrap';
 import RecentPosts from "../components/RecentPosts";
 import Topics from "../components/Topics";
 import {connect} from "react-redux";
+import { getPosts, getTopics } from '../actions/actions'
 
 class Forum extends Component {
+
+    componentDidMount(){
+        this.props.getPosts();
+        this.props.getTopics();
+    }
+
     render() {
 
         return (
@@ -31,4 +38,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(Forum);
+export default connect(mapStateToProps, { getPosts, getTopics})(Forum);

@@ -8,6 +8,9 @@ import { connect } from 'react-redux';
 
 class Teams extends Component {
 
+    componentDidMount(){
+        this.props.getTeams();
+    }
     _renderTeams() {
         return this.props.teams.map(function(team) {
             return (<Team key={team.id} data={team} />);
@@ -31,4 +34,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(Teams);
+export default connect(mapStateToProps, { getTeams })(Teams);

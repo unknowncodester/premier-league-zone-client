@@ -6,13 +6,13 @@ import LatestNews from "../components/LatestNews";
 import RecentPosts from "../components/RecentPosts";
 import LeagueTableSmall from "../components/LeagueTableSmall";
 import {connect} from 'react-redux';
-import {getLeague} from "../actions/actions";
+import {getLeague, getPosts} from "../actions/actions";
 
 class Home extends Component {
 
-    constructor() {
-        super();
-        this.state={league:[]};
+    componentDidMount(){
+        this.props.getLeague();
+        this.props.getPosts();
     }
 
     render() {
@@ -39,6 +39,6 @@ const mapStateToProps = (state) => {
         league: state.league,
         posts: state.posts
     }
-}
+};
 
-export default connect(mapStateToProps)(Home);
+export default connect(mapStateToProps, { getLeague, getPosts })(Home);

@@ -8,13 +8,11 @@ import {connect} from 'react-redux';
 
 class Matches extends Component {
 
-    constructor() {
-        super();
-        this.state={matches:[]};
+    componentDidMount(){
+        this.props.getMatches();
     }
-
     _renderMatches() {
-        return this.state.matches.map((match) => {
+        return this.props.matches.map((match) => {
             return (<Match data={match} />);
         });
     }
@@ -36,4 +34,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(Matches);
+export default connect(mapStateToProps, { getMatches })(Matches);
