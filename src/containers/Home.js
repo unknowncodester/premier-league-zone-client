@@ -6,13 +6,14 @@ import LatestNews from "../components/LatestNews";
 import RecentPosts from "../components/RecentPosts";
 import LeagueTableSmall from "../components/LeagueTableSmall";
 import {connect} from 'react-redux';
-import {getLeague, getPosts} from "../actions/actions";
+import {getLeague, getPosts, getNews} from "../actions/actions";
 
 class Home extends Component {
 
     componentDidMount(){
         this.props.getLeague();
         this.props.getPosts();
+        this.props.getNews();
     }
 
     render() {
@@ -22,7 +23,7 @@ class Home extends Component {
 
                 <Col md="4">
                     <h1>Latest News</h1>
-                    <LatestNews/>
+                    <LatestNews news={this.props.news}/>
                 </Col>
                 <Col md="4">
                     <h1>Recent Posts</h1>
@@ -41,8 +42,9 @@ class Home extends Component {
 const mapStateToProps = (state) => {
     return {
         league: state.league,
-        posts: state.posts
+        posts: state.posts,
+        news: state.news,
     }
 };
 
-export default connect(mapStateToProps, { getLeague, getPosts })(Home);
+export default connect(mapStateToProps, { getLeague, getPosts, getNews })(Home);

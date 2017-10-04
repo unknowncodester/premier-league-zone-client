@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 const apiUrl = 'http://localhost:8000/api/';
+const newsApiUrl = 'https://newsapi.org/v1/articles?source=four-four-two&sortBy=top&apiKey=6ab5b946b1db4f57b604aad4bde82faf';
 
 export async function getLeague() {
 
@@ -45,6 +46,15 @@ export async function getMatches() {
     return {
         type: 'GET_MATCHES',
         payload: response.data.data
+    }
+}
+
+export async function getNews() {
+    let response = await axios.get(newsApiUrl);
+
+    return {
+        type: 'GET_NEWS',
+        payload: response.data.articles
     }
 }
 

@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
-import { Card, CardTitle, CardText, CardActions, FlatButton } from 'material-ui';
+import NewsArticle from './NewsArticle';
+import {Row} from "react-bootstrap";
 
 class LatestNews extends Component {
+
+    _renderArticles(){
+        return this.props.news.map((article) => {
+            return (<NewsArticle article={article}/>)
+        });
+    }
+
     render() {
         return (
-            <Card>
-                <CardTitle title="Latest News" />
-                <CardText>
-                    Hodgson Sacked as Crystal Palace Manager
-                </CardText>
-            </Card>
+            <Row>
+                {this._renderArticles()}
+            </Row>
         );
     }
 }

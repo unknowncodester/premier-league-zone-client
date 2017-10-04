@@ -7,6 +7,13 @@ const league = (state = [], action) => {
    return state;
 }
 
+const news = (state = [], action) => {
+    if(action.type === 'GET_NEWS'){
+        return action.payload;
+    }
+    return state;
+}
+
 const teams = (state = [], action) => {
 
     if(action.type === 'GET_TEAMS'){
@@ -41,7 +48,8 @@ const appReducers = combineReducers({
     matches,
     topics,
     teams,
-    posts
+    posts,
+    news
 });
 
 export default appReducers;
