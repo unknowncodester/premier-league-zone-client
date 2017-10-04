@@ -11,10 +11,9 @@ class Team extends Component {
                 showExpandableButton={true}
             />
             <CardText expandable={true}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-                Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
-                Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
+                <p><b>Established : </b>{this.props.data.established}</p>
+                <p><b>Stadium : </b>{this.props.data.stadium.name} ({this.props.data.stadium.capacity})</p>
+                <p><b>Manager : </b>{this.props.data.manager.name} ({this.props.data.manager.nationality})</p>
             </CardText>
         </Card>
         );

@@ -19,11 +19,11 @@ class Forum extends Component {
         return (
             <Row>
                 <Header/>
-                <Col>
+                <Col md="6">
                     <h1>Recent Posts</h1>
                     <RecentPosts posts={this.props.posts}/>
                 </Col>
-                <Col>
+                <Col md="6">
                     <h1>Topics</h1>
                     <Topics topics={this.props.topics}/>
                 </Col>
