@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from '../components/Header.js';
-import Team from '../components/Team.js';
+import TeamCard from '../components/TeamCard';
 import Footer from '../components/Footer.js';
 import { Row } from 'react-bootstrap';
 import {getTeams} from "../actions/actions";
@@ -13,7 +13,7 @@ class Teams extends Component {
     }
     _renderTeams() {
         return this.props.teams.map(function(team) {
-            return (<Team key={team.id} data={team} />);
+            return (<TeamCard key={team.id} data={team} />);
         });
     }
 

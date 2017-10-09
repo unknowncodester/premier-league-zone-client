@@ -22,6 +22,14 @@ const teams = (state = [], action) => {
     return state;
 }
 
+const team = (state = [], action) => {
+
+    if(action.type === 'GET_TEAM'){
+        return action.payload;
+    }
+    return state;
+}
+
 const posts = (state = [], action) => {
     if(action.type === 'GET_POSTS'){
         return action.payload;
@@ -48,6 +56,7 @@ const appReducers = combineReducers({
     matches,
     topics,
     teams,
+    team,
     posts,
     news
 });

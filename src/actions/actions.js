@@ -22,6 +22,15 @@ export async function getTeams() {
     }
 }
 
+export async function getTeam(id) {
+    let response = await axios.get(apiUrl + 'teams/' + id);
+
+    return {
+        type: 'GET_TEAM',
+        payload: response.data.data
+    }
+}
+
 export async function getTopics() {
     let response = await axios.get(apiUrl + 'topics');
 

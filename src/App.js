@@ -9,11 +9,13 @@ import Teams from './containers/Teams';
 import Matches from './containers/Matches';
 import Stats from './containers/Stats';
 import Forum from './containers/Forum';
+import Team from './containers/Team';
 import './App.css';
 import { Grid } from 'react-bootstrap';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 class App extends Component {
+
     render() {
         return (
             <MuiThemeProvider>
@@ -25,6 +27,7 @@ class App extends Component {
                         <Route path="/matches" component={Matches}/>
                         <Route path="/stats" component={Stats}/>
                         <Route path="/forum" component={Forum}/>
+                        <Route path="/team/:id" component={Team}/>
                     </Grid>
                 </div>
             </BrowserRouter>
